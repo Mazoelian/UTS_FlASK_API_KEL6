@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/main.css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"/> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <title>Daftar</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="min-h-screen flex items-center justify-center bg-slate-400">
+      <div class="w-full max-w-md mx-auto px-4">
+        <div class="relative flex flex-col bg-white shadow-sm border border-slate-200 w-96 rounded-lg my-6">
+          <div class="relative m-2.5 items-center flex justify-center text-white h-24 rounded-md bg-slate-800">
+            <h3 class="text-2xl">Buat Akun</h3>
+          </div>
+          <div class="flex flex-col gap-4 p-6">
+            <div class="w-full max-w-sm min-w-[200px]">
+              <label class="block mb-2 text-sm text-slate-600"> Nama </label>
+              <input
+                type="text"
+                class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+                placeholder="Nama Kamu..."
+              />
+            </div>
+
+            <div class="w-full max-w-sm min-w-[200px]">
+              <label class="block mb-2 text-sm text-slate-600"> Email </label>
+              <input
+                type="email"
+                class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+                placeholder="Email Kamu..."
+              />
+            </div>
+
+            <div class="w-full max-w-sm min-w-[200px]">
+              <label class="block mb-2 text-sm text-slate-600"> Password </label>
+              <input
+                type="password"
+                class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+                placeholder="Password Kamu..."
+              />
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <button
+              class="w-full rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button"
+            >
+              Daftar
+            </button>
+            <p class="flex justify-center mt-6 text-sm text-slate-600">
+              Sudah punya akun?
+              <a href="{{ url_for('login') }}" class="ml-1 text-sm font-semibold text-slate-700 underline"> Masuk </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
