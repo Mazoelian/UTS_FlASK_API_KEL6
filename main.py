@@ -18,6 +18,10 @@ def gallery():
 def kontak():
     return render_template("pages/kontak.html")
 
+@app.route("/details")
+def details():
+    return render_template("pages/details.html")
+
 @app.route("/login")
 def login():
     return render_template("pages/login.html")

@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/static/css/main.css" />
+    <link rel="stylesheet" href="/static/css/style.css">
     <!-- <link rel="stylesheet" href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"/> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <title>{% block title %}{% endblock title %}</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
@@ -18,9 +20,9 @@
 </head>
 <body>
     <!-- Navbar -->
-    <div class="navbar bg-blue-600 shadow-md z-50 sticky top-0">
+    <div class="navbar bg-transparent fixed shadow-md z-50 w-full top-0">
         <div class="flex-1">
-          <a class="btn btn-ghost text-xl font-bold text-white ms-4">Travel</a>
+          <a class="btn btn-ghost text-xl font-bold text-white ms-4">Wisatatjeh</a>
         </div>
         <div class="flex-none">
           <ul class="menu menu-horizontal px-1 font-bold space-x-2">
@@ -84,6 +86,89 @@
         </nav>
       </footer>
       <!-- Akhir Footer -->
-      <!-- <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/script-name.js"></script>   -->
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 600) {
+              navbar.classList.add('bg-blue-600');
+              navbar.style.backgroundColor = 'rgb(59 130 246)'; // Memaksa warna biru
+            } else {
+              navbar.classList.remove('bg-blue-600');
+              navbar.style.backgroundColor = 'transparent'; // Kembali transparan
+            }
+          });
+        });
+
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 1, // Atur berapa slide yang ditampilkan di awal
+          spaceBetween: 16,
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          }, // Beri jarak antar slide
+          centeredSlides: false, // Pastikan slide pertama muncul di tengah
+          breakpoints: { 
+            // Konfigurasi jumlah slide berdasarkan ukuran layar
+            640: { 
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 50,
+            },
+          },
+        });
+        
+        var swiper = new Swiper(".mySwiper2", {
+          slidesPerView: 1, // Atur berapa slide yang ditampilkan di awal
+          spaceBetween: 16,
+          scrollbar: {
+            el: '.swiper-scrollbar',
+            draggable: true,
+          },// Beri jarak antar slide
+          centeredSlides: false, // Pastikan slide pertama muncul di tengah
+          breakpoints: { 
+            // Konfigurasi jumlah slide berdasarkan ukuran layar
+            640: { 
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 10,
+            },
+          },
+        });
+
+        var swiper = new Swiper('.swiper-container', {
+          effect: 'fade', // Efek fade
+          fadeEffect: {
+            crossFade: true, // Untuk transisi halus antar slide
+          },
+          autoplay: {
+            delay: 3000, // 3 seconds between slides
+            disableOnInteraction: false, // keeps autoplay even after interactions
+          },
+          loop: true,
+          cardsEffect: {
+            slideShadows: false, // Menonaktifkan shadow jika diinginkan
+          },
+        });
+        
+      </script>
+      
+      
+      
 </body>
 </html>
